@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <h2>JavaScript</h2>
+
+<h3>The window.location object</h3>
+<p id="demo"></p>
+<p id="demo02"></p>
+<p id="demo03"></p>
+<p id="demo04"></p>
+<p id="demo05"></p>
+
+</body>
+
+<script>
+document.getElementById("demo").innerHTML = 
+"The full URL of this page is:<br>" + window.location.href;
+
+
+document.getElementById("demo02").innerHTML =
+"Page hostname is " + window.location.hostname;
+
+document.getElementById("demo03").innerHTML =
+"Page path is " + window.location.pathname;
+
+document.getElementById("demo04").innerHTML =
+"Page protocol is " + window.location.protocol;
+
+document.getElementById("demo05").innerHTML =
+"Port number is " + window.location.port;
+
+//window.location.assign is use for redirecting the page.
+</script>
+</html>
