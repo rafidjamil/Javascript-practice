@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction Box</title>
+  <style>
+    body {
+      background: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .input-group button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #4CAF50;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      
+    }
+
+    .input-group button:hover {
+      background: #45a049;
+    }
+
+    textarea {
+      width: 95%;
+      height: 80px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3 style="text-align: center;" >ATM Machine</h3>
+    <div class="input-group">
+      <input type="text" placeholder="Enter amount" id="input-amount">
+      <button id="transaction-button" onclick="transact()">Transaction</button>
+    </div>
+    <textarea id="text-area"></textarea>
+  </div>
+</body>
+</html>
+<script src="./atmsystem.js">
+
+</script>
+
+<!-- bank only have 500rs 10 note, 1000rs 10 notes, and 5000rs 5 notes this is the limit. 
+ if the user want to transact 5000 and the bank have bank direcly give the user 5000 and now bank have four 5000 notes.
+ if the user 1200 and bank have only 500, 1000 and 5000 notes have dont have 200 or 100 or 50 50 notes so print bank did not support small money
+ if user type 500 then bank directly give 500 and then now bank have nine 500 notes and again if user type 1000 so bank give him 1000 directly give bank didnot have 1000 notes so bank give user 500 2 notes which makes 1000 
+ if user want 5000 and bank have now two 1000 notes and three 500 notes now 1000 and 500 can not fullfill the requirment of 5000 and bank also dont have 5000 so here print in text area bank didnot have 5000 
+ also with these logics you can make more logic which user can do or attempt okay 
+ we have to use if else condition for this 
+ -->

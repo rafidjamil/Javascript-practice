@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333333;
+        /* border: 1px solid white; */
+        height: 95vh;
+    }
+
+    .main-container {
+        border: 1px solid black;
+        /* height: 500px; */
+        width: 20%;
+        background-color: black;
+        border-radius: 15px;
+
+    }
+
+    .input2 {
+        /* max-width: 294px; */
+        width: 93%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        border: 1px solid gray;
+        padding: 10px;
+        /* font-weight: 150px; */
+        font-size: 30px;
+
+
+        
+
+
+    }
+
+    .wel {
+
+        /* color: whi; */
+        background-color: orange;
+        border: none;
+        color: black;
+        padding: 15px;
+        margin: 15px;
+        border-radius: 50%;
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        font-size: 12px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    .wel:hover {
+        background-color: gray;
+    }
+
+    .btn-cont {
+
+        gap: 10px;
+        display: flex;
+        /* height: 370px; */
+        flex-wrap: wrap;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* border: 1px solid white; */
+        justify-content: center;
+        /* align-items: center; */
+        padding: 15px;
+
+
+
+
+    }
+
+
+
+    .btn {
+        height: 58px;
+        width: 58px;
+        border-radius: 50%;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        /* color: white; */
+    }
+
+    .btn:hover {
+        background-color: gray;
+    }
+
+    .gray {
+        background: #a5a5a5;
+        color: black;
+    }
+
+    .dark {
+        background: #333333;
+        color: white;
+    }
+
+    .orange {
+        background: orange;
+        color: white;
+    }
+    #history-modal {
+  display: none;             
+  position: fixed;
+  /* border: 1px solid black;
+   
+        /* height: 500px; */
+        background-color: black;
+        
+        width: 19.84%;
+        /* background-color: black; */
+        /* border-radius: 15px; */
+}
+
+.history-content {
+  /* background: black; */
+  /* padding: 20px; */
+  width: 100%;
+  max-width: 300px;
+  /* border-radius: 10px; */
+  /* min-width: 190px;` */
+  /* text-align: center; */
+  height: 430px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  
+
+}
+.Input33{
+    height: 100%;
+    width: 100%;
+    max-width: 240px;
+    max-height: 430px;
+    /* padding: 10px; */
+    /* height: auto; */
+    /* max-width: 200px; */
+    /* text-align: start; */
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    resize: none;
+    
+}
+
+    /* .orange:hover{
+        background-color: lightgray;
+    } */
+    /* .btn.gray i {
+  color: black;
+} */
+</style>
+
+<body>
+
+    <div class="main-container">
+        <button class="wel" id="btn-history" onclick="btnh()">H </button>
+        <div id="history-modal">
+            <div class="history-content">
+                <textarea id="text-arae" class="Input33" type="text" ></textarea>
+                
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" class="input2" id="Input22">0</input>
+        </div>
+        <div class="btn-cont">
+            <button class="btn gray" id="btn-ac" onclick="btnac()">AC</button>
+            <button class="btn gray" id="btn-backspace" onclick="btnbackspace()"><i
+                    class="fa-solid fa-arrow-left"></i></button>
+
+            <button class="btn gray" id="btn-percent">%</button>
+            <button class="btn orange" id="btn-divide" onclick="handleOperator('÷')">÷</button>
+
+            <button class="btn dark" id="btn-7" onclick="btn7()">7 </button>
+            <button class="btn dark" id="btn-8" onclick="btn8()">8</button>
+            <button class="btn dark" id="btn-9" onclick="btn9()">9</button>
+            <button class="btn orange" id="btn-multiply" onclick="handleOperator('x')">x</button>
+
+            <button class="btn dark" id="btn-4" onclick="btn4()">4</button>
+            <button class="btn dark" id="btn-5" onclick="btn5()">5</button>
+            <button class="btn dark" id="btn-6" onclick="btn6()">6</button>
+            <button class="btn orange" id="btn-minus" onclick="handleOperator('-')">-</button>
+
+            <button class="btn dark" id="btn-1" onclick="btn1()">1</button>
+            <button class="btn dark" id="btn-2" onclick="btn2()">2</button>
+            <button class="btn dark" id="btn-3" onclick="btn3()">3</button>
+            <button class="btn orange" id="btn-plus" onclick="handleOperator('+')">+</button>
+
+            <button class="btn dark" id="btn-0" onclick="btn0()">0</button>
+            <button class="btn dark" id="btn-00" onclick="btn00()">00</button>
+            <button class="btn dark" id="btn-dot" onclick="btndot()">.</button>
+            <button class="btn orange" id="btn-equals" onclick="btneql()">=</button>
+
+        </div>
+
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
