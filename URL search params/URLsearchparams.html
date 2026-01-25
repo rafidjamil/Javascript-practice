@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // const querystr = 'name=Rafid&age=21&Occupation=Software+developer'
+
+    const usp = new URLSearchParams({
+        Name: "Rafid",
+        Age:21,
+        Occupation: "Software Development"
+    })
+    
+    
+    let myName = usp.get(`Name`)
+    
+    console.log(`Name is: ${myName}`)
+    // usp.set('name', 'Jamil')
+
+    for(const [key, value] of usp){
+
+        console.log(key+"=>"+value);
+    }
+    // console.log(usp.toString());
+    
+    
+    
+    </script>
+</body>
+</html>
