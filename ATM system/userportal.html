@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Menu</title>
+    <style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #1b2732, #1c1f3a);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .atm-container {
+        width: 715px;
+        height: 460px;
+        background: linear-gradient(145deg, #2c3e50, #34495e);
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border-radius: 10px;
+        /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); */
+        overflow: hidden;
+        /* transition: transform 0.3s; */
+    }
+
+    
+
+    /* Left Section */
+    .atm-left {
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        background: linear-gradient(to bottom, #2f577e, #2c3e50);
+    }
+
+    .atm-left h3 {
+        display: block;
+        font-weight: 500;
+        margin-bottom: -1px;
+        color: #f0f0f0;
+    }
+
+    .atm-left h2 {
+        /* margin-bottom: 25px; */
+        font-weight: 600;
+        color: #ffdd57;
+        letter-spacing: 0.5px;
+        margin-top: 0px;
+    }
+
+    .account {
+        /* margin-bottom: 15px; */
+        font-size: 18px;
+        /* background: rgba(255,255,255,0.05); */
+        /* padding: 15px; */
+        border-radius: 10px;
+        /* box-shadow: inset 0 2px 5px rgba(0,0,0,0.3); */
+    }
+
+    .account strong {
+        display: block;
+        font-weight: 500;
+        /* margin-bottom: 5px; */
+        color: #fff;
+    }
+    .account span{
+        /* margin-top: 10px; */
+         color: #ffdd57;
+    }
+
+    /* Right Section */
+    .atm-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .menu-grid button {
+        background: linear-gradient(145deg, #036ea8, #0288d1);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .menu-grid button:hover {
+        background: linear-gradient(145deg, #66ccff, #33b5e5);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .quick-cash {
+        margin-top: 20px;
+        background: linear-gradient(145deg, #ff2e63, #ff416c);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .quick-cash:hover {
+        background: linear-gradient(145deg, #ff4d79, #ff6a91);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+</style>
+
+</head>
+
+<body>
+    <div class="atm-container">
+       
+        <div class="atm-left">
+            <h3>Welcome:</h3>
+            <h2 id="user-name" ></h2>
+            <div class="account">
+                <strong>Balance:</strong>
+                <span id="account-balance" ></span>
+            </div>
+        </div>
+
+    
+        <div class="atm-right">
+            <div class="menu-grid">
+                <button onclick="window.location.href='transaction.html';">Get Cash</button>
+                <button onclick="window.location.href='depositpage.html';" >Deposit Cash</button>
+                <!-- <button >Payments</button> -->
+                <!-- <button onclick="window.location.href='atmcash.html';">ATM Cash Deposit</button> -->
+                <button onclick="window.location.href='settings.html';">Account Settings</button>
+                <button >Other</button>
+            </div>
+          
+        </div>
+    </div>
+
+   
+</body>
+<script src="./guiatm.js">
+
+</script>
+
+
+</html>

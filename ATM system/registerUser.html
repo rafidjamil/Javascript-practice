@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Card</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1b2732, #2c3e50);
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: #34495e;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            width: 650px;
+            padding: 30px;
+            height: 405px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* inputs ko center karne ke liye */
+        }
+
+        .form-group label {
+            width: 80%;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 36px;
+            font-size: 14px;
+        }
+
+        .btn {
+            background: #1abc9c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #16a085;
+        }
+
+        .bottom-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 30px;
+            margin-bottom: -90px;
+        }
+
+        .bottom-buttons button {
+            padding: 12px 16px;
+            font-size: 13px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: white;
+            height: 40px;
+            margin-top: -52px;
+            width: 40px;
+        }
+
+        .bottom-buttons button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Register</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="reg-name" placeholder="Enter user name">
+            </div>
+
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" id="reg-id" placeholder="Enter user ID">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="reg-password" placeholder="Enter user password">
+            </div>
+
+            <button type="submit" class="btn" onclick="bank1.registerUser()">Register</button>
+
+        </form>
+        <div class="bottom-buttons" style="margin-top:81px;">
+            <button onclick="window.location.href='atmportal.html';">←</button>
+        </div>
+    </div>
+</body>
+<script src="./guiatm.js">
+  
+  </script>
+
+</html>
