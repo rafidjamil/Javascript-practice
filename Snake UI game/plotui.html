@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting Boxes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .div-container {
+            width: 50%;
+            margin-top: 40px;
+        }
+        
+        .group {
+            width: 100%;
+            display: flex;
+            /* margin-bottom: 10px; */
+        }
+        
+        .div-bar {
+            border: 1px solid black;
+            height: 60px;
+            width: 9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        
+        .con1,
+        .con2,
+        .con3,
+        .con4 {
+            /* border: 1px solid black; */
+            height: 40%;
+            width: 40%;
+            margin: 2px;
+            border-radius: 50%;
+        }
+        
+        .con1 {
+            background-color: rgb(255, 0, 0, 0.5);
+        }
+        
+        .con2 {
+            background-color: rgb(0, 128, 0, 0.5);
+        }
+        
+        .con3 {
+            background-color: rgb(0, 0, 255, 0.5);
+        }
+        
+        .con4 {
+            background-color: rgb(255, 255, 0, 0.5);
+        }
+        
+        .number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 26px;
+            font-weight: bold;
+            color: rgb(0, 0, 0, 0.85);
+            pointer-events: none;
+        }
+        
+        .number._100 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-container">
+
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1" style="background-color: transparent;"></div>
+                <div class="con2" style="background-color: transparent;"></div>
+                <div class="con3" style="background-color: transparent;"></div>
+                <div class="con4" style="background-color: transparent;"></div>
+                <span class="number _100">🏆</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">99</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">98</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">97</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">96</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">95</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">94</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">93</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">92</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">91</span>
+            </div>
+        </div>
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">81</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">82</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">83</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">84</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">85</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">86</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">87</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">88</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">89</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">90</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">80</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">79</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">78</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">77</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">76</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">75</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">74</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">73</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">72</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">71</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">61</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">62</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">63</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">64</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">65</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">66</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">67</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">68</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">69</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">70</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">60</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">59</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">58</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">57</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">56</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">55</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">54</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">53</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">52</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">51</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">41</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">42</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">43</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">44</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">45</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">46</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">47</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">48</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">49</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">50</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">40</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">39</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">38</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">37</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">36</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">35</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">34</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">33</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">32</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">31</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">21</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">22</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">23</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">24</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">25</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">26</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">27</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">28</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">29</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">30</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">20</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">19</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">18</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">17</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">16</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">15</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">14</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">13</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">12</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">11</span>
+            </div>
+        </div>
+
+        <div class="group">
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">1</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">2</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">3</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">4</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">5</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">6</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">7</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">8</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">9</span>
+            </div>
+            <div class="div-bar">
+                <div class="con1"></div>
+                <div class="con2"></div>
+                <div class="con3"></div>
+                <div class="con4"></div><span class="number">10</span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
