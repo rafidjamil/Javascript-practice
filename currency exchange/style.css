@@ -1,0 +1,268 @@
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #141010;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .cx-card {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 8px 40px rgba(247, 7, 118, 0.25);
+      border: 0.5px solid rgba(247, 7, 118, 0.2);
+    }
+
+    /* ── Header — #f70776 ── */
+    .cx-header {
+      background: #f70776;
+      padding: 1.5rem 1.75rem 1.1rem;
+    }
+
+    .cx-header h1 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cx-header p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .cx-rate-badge {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.18);
+      border: 0.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .cx-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ── Body — #c3195d ── */
+    .cx-body {
+      background: #c3195d;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .cx-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cx-input-row {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.18);
+      border: 0.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .cx-input-row:focus-within {
+      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    .cx-select {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 0 26px 0 14px;
+      height: 52px;
+      cursor: pointer;
+      min-width: 95px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.65)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+    }
+
+    .cx-select option {
+      background: #680747;
+      color: #fff;
+    }
+    .flags{
+        width: 24px;
+        height: 20px;
+        margin-left: 10px;
+
+
+
+    }
+
+    .cx-divider-v {
+      width: 0.5px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    .cx-amount {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 0 16px;
+      height: 52px;
+      text-align: right;
+      width: 100%;
+    }
+
+    .cx-amount::placeholder { color: rgba(255, 255, 255, 0.35); }
+    .cx-amount[readonly]    { color: rgba(255, 255, 255, 0.8); cursor: default; }
+
+    /* ── Swap row ── */
+    .cx-swap-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.25rem 0 1rem;
+    }
+
+    .cx-line {
+      flex: 1;
+      height: 0.5px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .cx-swap-btn {
+      background: rgba(0, 0, 0, 0.2);
+      border: 0.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 17px;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .cx-swap-btn:hover { background: rgba(247, 7, 118, 0.35); }
+
+    /* ── Footer — #680747 ── */
+    .cx-footer {
+      background: #680747;
+      padding: 1.25rem 1.75rem 1.5rem;
+    }
+
+    /* ── Result box ── */
+    .cx-result-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 0.5px solid rgba(247, 7, 118, 0.4);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cx-result-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cx-result-amount {
+      font-size: 32px;
+      font-weight: 500;
+      color: #f70776;
+      letter-spacing: -0.01em;
+    }
+
+    .cx-result-currency {
+      font-size: 16px;
+      color: rgba(247, 7, 118, 0.7);
+      margin-left: 4px;
+    }
+
+    .cx-breakdown {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 6px;
+    }
+
+    /* ── Convert button ── */
+    .cx-convert-btn {
+      width: 100%;
+      background: #f70776;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      height: 48px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+      margin-bottom: 14px;
+    }
+
+    .cx-convert-btn:hover  { background: #d4066a; }
+    .cx-convert-btn:active { transform: scale(0.98); }
+
+    /* ── Info row ── */
+    .cx-info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 10px 0;
+    }
+
+    .cx-info-item  { text-align: center; flex: 1; }
+    .cx-info-value { font-size: 14px; font-weight: 500; color: #f70776; }
+    .cx-info-key   { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; letter-spacing: 0.04em; }
+    .cx-info-sep   { width: 0.5px; height: 28px; background: rgba(247,7,118,0.25); }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      .cx-result-amount { font-size: 26px; }
+      .cx-header h1     { font-size: 18px; }
+    }

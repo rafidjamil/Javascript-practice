@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Exchange</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cx-card">
+
+    <!-- Header: #f70776 -->
+    <div class="cx-header">
+      <h1>
+        <i class="ti ti-arrows-exchange" aria-hidden="true"></i>
+        Currency Exchange
+      </h1>
+      <p>Live mid-market rates</p>
+      <!-- <div class="cx-rate-badge">
+        <span class="cx-dot"></span>
+        <span id="live-rate-text">1 USD = 1.0891 EUR</span>
+      </div> -->
+    </div>
+
+    <!-- Body: #c3195d -->
+    <div class="cx-body">
+
+      <div class="cx-label">You send</div>
+      <div class="cx-input-row">
+        <img src="https://flagsapi.com/US/flat/64.png" alt="IN Flag" class="flags" />
+        <select class="cx-select" id="from-currency" aria-label="From currency" name="from">
+          <!-- <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="PKR">PKR</option>
+          <option value="AED">AED</option>
+          <option value="CAD">CAD</option>
+          <option value="JPY">JPY</option>
+          <option value="INR">INR</option> -->
+        </select>
+        <div class="cx-divider-v"></div>
+        <input class="cx-amount" type="number" id="from-amount" placeholder="0.00" value="1" aria-label="Amount to convert" />
+      </div>
+
+      <div class="cx-swap-row">
+        <div class="cx-line"></div>
+        <button class="cx-swap-btn" id="swap-btn" aria-label="Swap currencies" title="Swap currencies">
+          <i class="ti ti-transfer-vertical" aria-hidden="true"></i>
+        </button>
+        <div class="cx-line"></div>
+      </div>
+
+      <div class="cx-label">You get</div>
+      <div class="cx-input-row">
+          <img src="https://flagsapi.com/PK/flat/64.png" alt="US Flag" class="flags" />
+        <select class="cx-select" id="to-currency" aria-label="To currency" name="to">
+          <!-- <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="PKR">PKR</option>
+          <option value="AED">AED</option>
+          <option value="CAD">CAD</option>
+          <option value="JPY">JPY</option>
+          <option value="INR">INR</option> -->
+        </select>
+        <div class="cx-divider-v"></div>
+        <input class="cx-amount" type="number" id="to-amount"  readonly aria-label="Converted amount" />
+      </div>
+
+    </div>
+
+    <!-- Footer: #680747 -->
+    <div class="cx-footer">
+
+      <div class="cx-result-box">
+        <div class="cx-result-label">Converted amount</div>
+        <div>
+          <span class="cx-result-amount" id="result-display"></span>
+          <span class="cx-result-currency" id="result-currency"></span>
+        </div>
+        <div class="cx-breakdown" id="breakdown-text"></div>
+      </div>
+
+      <button class="cx-convert-btn" id="convert-btn">
+        <i class="ti ti-refresh" aria-hidden="true" style="font-size:17px;"></i>
+        Convert
+      </button>
+
+      <!-- <div class="cx-info-row">
+        <div class="cx-info-item">
+          <div class="cx-info-value" id="rate-val">1.0891</div>
+          <div class="cx-info-key">Exchange rate</div>
+        </div>
+        <div class="cx-info-sep"></div>
+        <div class="cx-info-item">
+          <div class="cx-info-value">0%</div>
+          <div class="cx-info-key">Our fee</div>
+        </div>
+        <div class="cx-info-sep"></div>
+        <div class="cx-info-item">
+          <div class="cx-info-value" id="inverse-val">0.9181</div>
+          <div class="cx-info-key">Inverse rate</div>
+        </div>
+      </div>   -->
+
+    </div>
+  </div>
+
+  <script src="countrycode.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
